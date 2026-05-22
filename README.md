@@ -24,6 +24,7 @@ The data management architecture relies on a local SQLite database, research_dat
 
 DB Schema: ‘project_data’
 | Column Name | Data Type | Constraints / Description |
+| :--- | :--- | :--- |
 | `id` | `INTEGER` | Unique row identifier |
 | `project` | `TEXT` | Name/ID of the research study (e.g., prj1) |
 | `subject` | `TEXT` | Patient unique identifier |
@@ -55,7 +56,7 @@ cell_counts Table: Contains numeric measurements.
 This repository contains the following files. Each script handles a discrete stage of the data pipeline:
 
 | File | Description |
-
+| :--- | :--- | :--- |
 | `cell-count.csv` | Raw input data |
 | `requirements.txt` | Project dependencies |
 | `Makefile` | Autorun blueprint |
