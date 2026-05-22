@@ -1,5 +1,5 @@
 
-**Immune Cell Population Dashboard & Pipeline**
+# **Immune Cell Population Dashboard & Pipeline**
 
 This project includes a standardized `Makefile` to automate setup and execution within GitHub Codespaces. Run the following commands sequentially in your terminal:
 
@@ -7,7 +7,7 @@ make setup
 make pipeline
 make dashboard 
 
-**File Explanation**
+## **File Explanation**
 
 1. Setup
 Installs all required third-party libraries listed in the `requirements.txt` file.
@@ -18,7 +18,7 @@ Executes the data pipeline. First initializes the SQLite database, parses the ra
 3. Dashboard
 Starts a local web server hosting the Streamlit interactive dashboard.
 
-**Schema Rationale**
+## **Schema Rationale**
 
 The data management architecture relies on a local SQLite database, research_data.db (initialized and loaded via load_data.py.)
 
@@ -43,7 +43,7 @@ DB Schema: ‘project_data’
 | `monocyte` | `INTEGER` | Raw cell count |
 
 
-**Architecture Rationale + Scaling Ideas:**
+## **Architecture Rationale + Scaling Ideas:**
 
 This single-table schema is efficient for prototyping/single projects, but a clinical data model which must scale for hundreds of projects, thousands of patients, and multi-omic analytics will require some adjustments. To support that growth, I would normalize this schema into a star/snowflake structure:
 
@@ -52,7 +52,7 @@ subjects Table: (subject_id, age, sex, condition). Demographics are static, trac
 samples Table: Links tracking times back to a single subject.
 cell_counts Table: Contains numeric measurements.
 
-**Code Structure & Design Choices**
+## **Code Structure & Design Choices**
 This repository contains the following files. Each script handles a discrete stage of the data pipeline:
 
 | File | Description |
@@ -73,11 +73,11 @@ This repository contains the following files. Each script handles a discrete sta
 | `filtered_baseline_data.csv` | Output of Part 4: baseline data for melanoma patients treated with miraclib |
 
 
-**Architectural Decisions**
+## **Architectural Decisions**
 
 Preserving Floating-Point Precision: Statistical testing via scipy.stats.mannwhitneyu was conducted using maximum unrounded float precision. Percentages are only formatted or truncated during visual display to prevent rounding distortions from skewing the true statistical P-values.
 
-**Dashboard Overview & Functionality**
+## **Dashboard Overview & Functionality**
 
 Dynamic Filters: Selection boxes allow for hot-swappable parameters to filter the data quickly.
 
