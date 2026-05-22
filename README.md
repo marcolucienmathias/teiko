@@ -56,7 +56,7 @@ cell_counts Table: Contains numeric measurements.
 This repository contains the following files. Each script handles a discrete stage of the data pipeline:
 
 | File | Description |
-| :--- | :--- | :--- |
+| :--- | :--- |
 | `cell-count.csv` | Raw input data |
 | `requirements.txt` | Project dependencies |
 | `Makefile` | Autorun blueprint |
